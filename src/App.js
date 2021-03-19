@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/App.scss";
 import Header from "./components/header";
 import Chart from "./components/chart";
 import Form from "./components/form";
