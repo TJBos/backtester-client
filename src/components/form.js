@@ -82,7 +82,57 @@ const Form = () => {
         <input
           type={show()}
           className="selection"
-          name="numberEntered"
+          name="buyNumberEntered"
+          placeholder="which number?"
+          onChange={handleChange}
+        ></input>
+        <label for="sell-signal">Sell signal:</label> Sell when:
+        <select
+          id="sell-signal"
+          name="sellIndicator1"
+          className="selection"
+          onChange={handleChange}
+        >
+          <option value="" disabled selected>
+            Select option
+          </option>
+          <option value="RSI">RSI</option>
+          <option value="EMA20">MACD</option>
+          <option value="Price">Price</option>
+          <option value="EMA50">1M</option>
+        </select>
+        is
+        <select
+          id="sell-signal"
+          name="sellAction"
+          className="selection"
+          onChange={handleChange}
+        >
+          <option value="" disabled selected>
+            Select action
+          </option>
+          <option value="smaller">Smaller</option>
+          <option value="larger">Larger</option>
+        </select>{" "}
+        than
+        <select
+          id="sell-signal"
+          name="sellIndicator2"
+          className="selection"
+          onChange={handleChange}
+        >
+          <option value="" disabled selected>
+            Select option
+          </option>
+          <option value="RSI">RSI</option>
+          <option value="EMA20">MACD</option>
+          <option value="Price">Price</option>
+          <option value="Number">A number</option>
+        </select>
+        <input
+          type={show()}
+          className="selection"
+          name="sellNumberEntered"
           placeholder="which number?"
           onChange={handleChange}
         ></input>
