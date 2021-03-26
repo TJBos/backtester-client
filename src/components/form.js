@@ -8,11 +8,11 @@ const Form = () => {
     setParameters({ ...parameters, [event.target.name]: event.target.value });
   };
 
-  const show = () => {
-    if (parameters.buyIndicator2 === "Number") {
-      return "number";
-    } else {
-      return "hidden";
+  const show = (type) => {
+    if (type === "buy") {
+      return parameters.$buyIndicator2 === "Number" ? "number" : "hidden";
+    } else if (type === "sell") {
+      return parameters.sellIndicator2 === "Number" ? "number" : "hidden";
     }
   };
 
@@ -80,12 +80,13 @@ const Form = () => {
           <option value="Number">A number</option>
         </select>
         <input
-          type={show()}
+          type={show("buy")}
           className="selection"
           name="buyNumberEntered"
           placeholder="which number?"
           onChange={handleChange}
         ></input>
+        <br></br>
         <label for="sell-signal">Sell signal:</label> Sell when:
         <select
           id="sell-signal"
@@ -130,7 +131,7 @@ const Form = () => {
           <option value="Number">A number</option>
         </select>
         <input
-          type={show()}
+          type={show("sell")}
           className="selection"
           name="sellNumberEntered"
           placeholder="which number?"
