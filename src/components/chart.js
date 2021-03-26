@@ -9,7 +9,6 @@ const Chart = () => {
         interval="D"
         timezone="Etc/UTC"
         theme={Themes.DARK}
-        style="1"
         locale="en"
         width="100%"
         height="400"

@@ -8,6 +8,17 @@ const Form = () => {
     setParameters({ ...parameters, [event.target.name]: event.target.value });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("URLHERE", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(parameters),
+    });
+  };
+
   const show = (type) => {
     if (type === "buy") {
       return parameters.$buyIndicator2 === "Number" ? "number" : "hidden";
@@ -19,7 +30,7 @@ const Form = () => {
   return (
     <div className="form-box">
       <h1>Stack your strategy</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label for="interval">Interval:</label>
         <select
           id="interval"
