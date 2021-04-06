@@ -12,7 +12,7 @@ def home():
 
 @app.route('/add', methods=['POST'])
 def add():
-    print(request.json["name"])
+    print(request.json)
     return { "response": "OK "}
 
 if __name__ == "__main__":

@@ -4,14 +4,16 @@ import "../styles/form.scss";
 const Form = () => {
   const [parameters, setParameters] = React.useState({});
 
+  const URL = "http://localhost:5000/add";
+
   const handleChange = (event) => {
     setParameters({ ...parameters, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("URLHERE", {
-      method: "put",
+    fetch(URL, {
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
@@ -58,11 +60,10 @@ const Form = () => {
             Select option
           </option>
           <option value="RSI">RSI</option>
-          <option value="EMA20">MACD</option>
+          <option value="EMA20">EMA20</option>
           <option value="Price">Price</option>
-          <option value="EMA50">1M</option>
+          <option value="EMA50">EMA50</option>
         </select>
-        is
         <select
           id="buy-signal"
           name="buyAction"
@@ -72,10 +73,9 @@ const Form = () => {
           <option value="" disabled selected>
             Select action
           </option>
-          <option value="smaller">Smaller</option>
-          <option value="larger">Larger</option>
+          <option value="smaller">is smaller than</option>
+          <option value="larger">is larger than</option>
         </select>{" "}
-        than
         <select
           id="buy-signal"
           name="buyIndicator2"
@@ -86,7 +86,7 @@ const Form = () => {
             Select option
           </option>
           <option value="RSI">RSI</option>
-          <option value="EMA20">MACD</option>
+          <option value="EMA20">EMA20</option>
           <option value="Price">Price</option>
           <option value="Number">A number</option>
         </select>
@@ -113,7 +113,6 @@ const Form = () => {
           <option value="Price">Price</option>
           <option value="EMA50">1M</option>
         </select>
-        is
         <select
           id="sell-signal"
           name="sellAction"
@@ -123,10 +122,9 @@ const Form = () => {
           <option value="" disabled selected>
             Select action
           </option>
-          <option value="smaller">Smaller</option>
-          <option value="larger">Larger</option>
+          <option value="smaller">Is smaller than</option>
+          <option value="larger">Is larger than</option>
         </select>{" "}
-        than
         <select
           id="sell-signal"
           name="sellIndicator2"
@@ -137,7 +135,7 @@ const Form = () => {
             Select option
           </option>
           <option value="RSI">RSI</option>
-          <option value="EMA20">MACD</option>
+          <option value="EMA20">EMA20</option>
           <option value="Price">Price</option>
           <option value="Number">A number</option>
         </select>
@@ -150,7 +148,7 @@ const Form = () => {
         ></input>
         <br></br>
         <button id="sub-button" type="submit">
-          Backtest!
+          Compose!
         </button>
       </form>
     </div>
