@@ -13,7 +13,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="formdiv">
       <Button variant="primary" onClick={handleShow}>
         Add Buy Signal
       </Button>
