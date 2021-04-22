@@ -11,7 +11,7 @@ const Form = () => {
   const handleClose = () => {
     setShowBuy(false);
   };
-  //just to test this modal
+
   return (
     <div className="formdiv">
       <Button variant="primary" onClick={handleShow}>
